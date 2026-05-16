@@ -45,6 +45,16 @@ export function Auth() {
               Login as Staff
             </Button>
           </div>
+          
+          <div className="mt-8 pt-6 border-t border-gray-200 text-center">
+            <Button
+              variant="link"
+              className="text-[#16A34A] hover:text-[#15803D] font-medium"
+              onClick={() => navigate('/signin')}
+            >
+              Try traditional Sign In flow &rarr;
+            </Button>
+          </div>
         </Card>
         
         <p className="text-center text-gray-500 text-sm mt-8">
