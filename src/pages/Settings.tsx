@@ -31,7 +31,7 @@ export function Settings() {
                   <div className="space-y-3">
                     <div className="flex justify-between">
                       <span className="text-gray-600">Email:</span>
-                      <span className="font-medium">admin@logistics-nexus.com</span>
+                      <span className="font-medium">admin@staff-management.com</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-gray-600">Phone:</span>

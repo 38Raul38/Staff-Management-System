@@ -14,7 +14,7 @@ export function Auth() {
           <div className="w-16 h-16 bg-[#16A34A]/20 rounded-2xl flex items-center justify-center mb-4 border border-[#16A34A]/30">
             <Package2 className="w-8 h-8 text-[#16A34A]" />
           </div>
-          <h1 className="text-3xl font-bold text-gray-900">Logistics Nexus</h1>
+          <h1 className="text-3xl font-bold text-gray-900">Staff Management</h1>
           <p className="text-gray-600">Operations & Staff Management Platform</p>
         </div>
 
@@ -24,7 +24,7 @@ export function Auth() {
           <div className="space-y-4">
             <Button 
               className="w-full h-14 text-lg bg-[#16A34A] hover:bg-[#15803D] text-white flex gap-3"
-              onClick={() => navigate('/dashboard')}
+              onClick={() => navigate('/signin?role=admin')}
             >
               <ShieldCheck className="w-5 h-5" />
               Login as Administrator
@@ -39,20 +39,10 @@ export function Auth() {
             <Button 
               variant="outline"
               className="w-full h-14 text-lg border-gray-300 text-gray-700 hover:bg-gray-50 flex gap-3"
-              onClick={() => navigate('/worker')}
+              onClick={() => navigate('/signin?role=staff')}
             >
               <UserCircle className="w-5 h-5 text-gray-500" />
               Login as Staff
-            </Button>
-          </div>
-          
-          <div className="mt-8 pt-6 border-t border-gray-200 text-center">
-            <Button
-              variant="link"
-              className="text-[#16A34A] hover:text-[#15803D] font-medium"
-              onClick={() => navigate('/signin')}
-            >
-              Try traditional Sign In flow &rarr;
             </Button>
           </div>
         </Card>
