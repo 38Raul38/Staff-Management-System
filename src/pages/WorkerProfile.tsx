@@ -1,8 +1,10 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { LogOut, Package2, TrendingUp, Clock, Target, AlertCircle } from 'lucide-react';
+import { LogOut, Package2, TrendingUp, Clock, Target, AlertCircle, Settings } from 'lucide-react';
 import { Card } from '../components/ui/card';
 import { Button } from '../components/ui/button';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '../components/ui/dialog';
+import { Input } from '../components/ui/input';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { mockStaff } from '../data/mockStaff';
 
@@ -28,7 +30,7 @@ export function WorkerProfile() {
       <header className="h-16 border-b border-gray-300 bg-white flex items-center justify-between px-6 shadow-sm z-10">
         <div className="flex items-center gap-3">
           <Package2 className="w-6 h-6 text-[#16A34A]" />
-          <h1 className="text-xl font-bold">Operator Portal</h1>
+          <h1 className="text-xl font-bold">Staff Portal</h1>
         </div>
         <div className="flex items-center gap-4">
           <div className="flex items-center gap-3">
@@ -37,6 +39,35 @@ export function WorkerProfile() {
             </div>
             <span className="font-medium text-gray-700">{worker.name}</span>
           </div>
+          
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button variant="ghost" size="icon" className="text-gray-500 hover:text-gray-700">
+                <Settings className="w-5 h-5" />
+              </Button>
+            </DialogTrigger>
+            <DialogContent>
+              <DialogHeader>
+                <DialogTitle>Profile Settings</DialogTitle>
+              </DialogHeader>
+              <div className="space-y-4 py-4">
+                <div className="space-y-2">
+                  <label className="text-sm font-medium">Name</label>
+                  <Input defaultValue={worker.name} />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-sm font-medium">Role</label>
+                  <Input defaultValue={worker.role} disabled />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-sm font-medium">Contact Preference</label>
+                  <Input defaultValue="Email" />
+                </div>
+                <Button className="w-full bg-[#16A34A] hover:bg-[#15803D] text-white">Save Changes</Button>
+              </div>
+            </DialogContent>
+          </Dialog>
+
           <div className="h-6 w-px bg-gray-300"></div>
           <Button variant="ghost" size="icon" onClick={() => navigate('/')} className="text-gray-500 hover:text-red-500">
             <LogOut className="w-5 h-5" />
