@@ -39,34 +39,6 @@ export function WorkerProfile() {
             </div>
             <span className="font-medium text-gray-700">{worker.name}</span>
           </div>
-          
-          <Dialog>
-            <DialogTrigger asChild>
-              <Button variant="ghost" size="icon" className="text-gray-500 hover:text-gray-700">
-                <Settings className="w-5 h-5" />
-              </Button>
-            </DialogTrigger>
-            <DialogContent>
-              <DialogHeader>
-                <DialogTitle>Profile Settings</DialogTitle>
-              </DialogHeader>
-              <div className="space-y-4 py-4">
-                <div className="space-y-2">
-                  <label className="text-sm font-medium">Name</label>
-                  <Input defaultValue={worker.name} />
-                </div>
-                <div className="space-y-2">
-                  <label className="text-sm font-medium">Role</label>
-                  <Input defaultValue={worker.role} disabled />
-                </div>
-                <div className="space-y-2">
-                  <label className="text-sm font-medium">Contact Preference</label>
-                  <Input defaultValue="Email" />
-                </div>
-                <Button className="w-full bg-[#16A34A] hover:bg-[#15803D] text-white">Save Changes</Button>
-              </div>
-            </DialogContent>
-          </Dialog>
 
           <div className="h-6 w-px bg-gray-300"></div>
           <Button variant="ghost" size="icon" onClick={() => navigate('/')} className="text-gray-500 hover:text-red-500">
@@ -78,6 +50,58 @@ export function WorkerProfile() {
       <main className="flex-1 p-4 md:p-8 overflow-y-auto">
         <div className="max-w-6xl mx-auto space-y-6">
           
+          {/* Profile & Settings (Like Admin Profile) */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <Card className="col-span-1 p-6 flex flex-col items-center justify-center text-center">
+              <div className="w-24 h-24 rounded-full bg-gray-100 flex items-center justify-center text-4xl mb-4 border-2 border-[#16A34A]">
+                {worker.name.charAt(0)}
+              </div>
+              <h3 className="text-xl font-bold text-gray-900">{worker.name}</h3>
+              <span className="text-xs bg-[#16A34A]/20 text-[#16A34A] px-3 py-1 rounded-full font-bold mt-2 uppercase">
+                {worker.role}
+              </span>
+              <p className="text-sm text-gray-600 mt-4">Active Zone: {worker.currentZone}</p>
+            </Card>
+
+            <Card className="col-span-1 md:col-span-2 p-6 space-y-6">
+              <div>
+                <h4 className="text-lg font-bold border-b border-gray-300 pb-2 mb-4">Account Information</h4>
+                <div className="space-y-3">
+                  <div className="flex justify-between">
+                    <span className="text-gray-600">Employee ID:</span>
+                    <span className="font-medium">{worker.id}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-600">Status:</span>
+                    <span className="font-medium capitalize">{worker.status.replace('-', ' ')}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-600">Specialization:</span>
+                    <span className="font-medium">Heavy Machinery, Forklift</span>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h4 className="text-lg font-bold border-b border-gray-300 pb-2 mb-4">Profile Settings</h4>
+                <div className="space-y-3">
+                  <div className="flex justify-between items-center">
+                    <span className="text-gray-600">SMS Task Alerts</span>
+                    <input type="checkbox" defaultChecked className="w-4 h-4 accent-[#16A34A]" />
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-gray-600">Auto-Accept Assigned Tasks</span>
+                    <input type="checkbox" className="w-4 h-4 accent-[#16A34A]" />
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-gray-600">Share Live Location with Admins</span>
+                    <input type="checkbox" defaultChecked className="w-4 h-4 accent-[#16A34A]" />
+                  </div>
+                </div>
+              </div>
+            </Card>
+          </div>
+
           {/* Top Stats */}
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             <Card className="p-6 bg-white shadow-md border-gray-300 flex flex-col">
