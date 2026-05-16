@@ -1,0 +1,41 @@
+import type { WarehouseZone } from './types';
+
+export const warehouseZones: WarehouseZone[] = [
+ { id: 'zone-a', name: 'Zone A', label: 'A', x: 50, y: 40, width: 180, height: 120, color: '#16A34A', type: 'storage' },
+ { id: 'zone-b', name: 'Zone B', label: 'B', x: 270, y: 40, width: 180, height: 120, color: '#0EA5E9', type: 'storage' },
+ { id: 'zone-c', name: 'Zone C', label: 'C', x: 490, y: 40, width: 180, height: 120, color: '#F59E0B', type: 'packing' },
+ { id: 'zone-d', name: 'Zone D', label: 'D', x: 50, y: 220, width: 180, height: 120, color: '#8B5CF6', type: 'staging' },
+ { id: 'zone-e', name: 'Zone E', label: 'E', x: 270, y: 220, width: 180, height: 120, color: '#14B8A6', type: 'receiving' },
+ { id: 'zone-f', name: 'Zone F', label: 'F', x: 490, y: 220, width: 180, height: 120, color: '#EF4444', type: 'loading' },
+];
+
+export const shelves = [
+ { x: 70, y: 60, width: 60, height: 15 },
+ { x: 70, y: 85, width: 60, height: 15 },
+ { x: 70, y: 110, width: 60, height: 15 },
+ { x: 150, y: 60, width: 60, height: 15 },
+ { x: 150, y: 85, width: 60, height: 15 },
+ { x: 150, y: 110, width: 60, height: 15 },
+ { x: 290, y: 60, width: 60, height: 15 },
+ { x: 290, y: 85, width: 60, height: 15 },
+ { x: 290, y: 110, width: 60, height: 15 },
+ { x: 370, y: 60, width: 60, height: 15 },
+ { x: 370, y: 85, width: 60, height: 15 },
+ { x: 370, y: 110, width: 60, height: 15 },
+ { x: 510, y: 65, width: 50, height: 25 },
+ { x: 510, y: 100, width: 50, height: 25 },
+ { x: 590, y: 65, width: 50, height: 25 },
+ { x: 590, y: 100, width: 50, height: 25 },
+ { x: 70, y: 240, width: 60, height: 15 },
+ { x: 70, y: 265, width: 60, height: 15 },
+ { x: 70, y: 290, width: 60, height: 15 },
+ { x: 150, y: 240, width: 60, height: 15 },
+ { x: 150, y: 265, width: 60, height: 15 },
+ { x: 290, y: 240, width: 60, height: 15 },
+ { x: 290, y: 265, width: 60, height: 15 },
+ { x: 370, y: 240, width: 60, height: 15 },
+ { x: 370, y: 265, width: 60, height: 15 },
+ { x: 510, y: 245, width: 70, height: 30 },
+ { x: 600, y: 245, width: 50, height: 30 },
+ { x: 510, y: 290, width: 70, height: 30 },
+];
